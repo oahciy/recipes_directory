@@ -21,4 +21,20 @@ describe RecipeRepository do
     expect(recipes[1].cooking_time).to eq '70'
     expect(recipes[1].rating).to eq '4'
   end
+
+  it "finds a recipe by its id, id = 1" do
+    repo = RecipeRepository.new
+    recipe = repo.find(1)
+    expect(recipe.name).to eq 'Buffalo Wings'
+    expect(recipe.cooking_time).to eq '40'
+    expect(recipe.rating).to eq '5'
+  end
+
+  it "finds a recipe by its id, id = 2" do
+    repo = RecipeRepository.new
+    recipe = repo.find(2)
+    expect(recipe.name).to eq 'Glazed Salmon'
+    expect(recipe.cooking_time).to eq '70'
+    expect(recipe.rating).to eq '4'
+  end
 end
